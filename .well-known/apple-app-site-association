@@ -1,0 +1,21 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": [
+          "6ZFJ3AG832.app.wonty.mobile"
+        ],
+        "components": [
+          {
+            "/": "/e/*",
+            "comment": "Event invitations"
+          },
+          {
+            "/": "/c/*",
+            "comment": "Catalog share links"
+          }
+        ]
+      }
+    ]
+  }
+}

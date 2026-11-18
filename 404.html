@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <!-- Invitation pages carry a private code in their address: keep them out of search engines. -->
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="referrer" content="no-referrer" />
+    <script>
+      // GitHub Pages serves this file for every unknown path (it has no rewrites), so this is the page
+      // of <base>/e/<token> and <base>/c/<token>, and of every other missing page, at any depth.
+      // Relative URLs would resolve against that path, so the site's base is set as <base> before
+      // any asset is referenced. The base is NEVER taken from the address: it is the root ('', the
+      // site lives at https://wonty-app.github.io/), or one of KNOWN_BASES when the site is served
+      // under a project path (then list that path here, e.g. ['/wonty'], and keep it equal to the
+      // path of LINK_BASE_URL in assets/config.js, which cannot be read before the base is known).
+      // An address like //evil.example/e/<token> therefore cannot point <base> at another host.
+      (function () {
+        var KNOWN_BASES = [];
+        var SEGMENTS = /^(\/[A-Za-z0-9_.~%-]+)*$/;
+        var path = location.pathname;
+        var base = KNOWN_BASES.filter(function (prefix) {
+          return SEGMENTS.test(prefix) && (path === prefix || path.indexOf(prefix + '/') === 0);
+        })[0] || '';
+        window.WONTY_BASE_PATH = base;
+        document.write('<base href="' + base + '/">');
+      })();
+    </script>
+    <title>Wonty — wishlists and gifts with friends</title>
+    <meta name="description" content="An invitation to Wonty: wishlists and gifts with friends." />
+    <meta name="theme-color" content="#5B3FD9" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Wonty" />
+    <meta property="og:title" content="You’re invited on Wonty" />
+    <meta property="og:description" content="Open the invitation in Wonty: wishlists and gifts with friends." />
+    <meta property="og:image" content="https://wonty-app.github.io/assets/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Wonty — wishlists and gifts with friends" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="You’re invited on Wonty" />
+    <meta name="twitter:description" content="Open the invitation in Wonty: wishlists and gifts with friends." />
+    <meta name="twitter:image" content="https://wonty-app.github.io/assets/og.png" />
+    <link rel="icon" type="image/png" href="assets/icon.png" />
+    <link rel="apple-touch-icon" href="assets/icon.png" />
+    <link rel="stylesheet" href="assets/site.css" />
+    <script src="assets/config.js"></script>
+    <script>
+      // Smart App Banner once the app is on the App Store: "Open" hands this invitation to the app.
+      (function () {
+        var id = String((window.WONTY_CONFIG || {}).APP_STORE_ID || '');
+        if (!/^\d+$/.test(id)) return;
+        var argument = location.href.replace(/[",<>]/g, encodeURIComponent);
+        document.write('<meta name="apple-itunes-app" content="app-id=' + id + ', app-argument=' + argument + '">');
+      })();
+    </script>
+  </head>
+  <body data-page="invite">
+    <main class="page">
+      <section id="invite" class="card" hidden>
+        <img class="app-icon" src="assets/icon.png" alt="" width="88" height="88" />
+        <h1 id="invite-title">You’re invited to an event</h1>
+        <p id="invite-body" class="lead">Open the invitation in the Wonty app to see the details and join.</p>
+        <div class="actions">
+          <a id="open-app" class="button primary" href="wonty://" data-i18n="openApp">Open in Wonty</a>
+          <button id="get-app" class="button secondary" type="button" data-i18n="getApp">Get Wonty</button>
+        </div>
+        <p class="hint" data-i18n="installHint">
+          New to Wonty? “Get Wonty” copies this invitation, so the app can open it once it’s installed.
+        </p>
+        <p id="status" class="status" role="status" aria-live="polite"></p>
+        <p id="platform-hint" class="hint" hidden></p>
+      </section>
+
+      <section id="not-found" class="card" hidden>
+        <img class="app-icon" src="assets/icon.png" alt="" width="88" height="88" />
+        <h1 data-i18n="notFoundTitle">Page not found</h1>
+        <p class="lead" data-i18n="notFoundBody">There’s nothing at this address.</p>
+        <div class="actions">
+          <a class="button secondary" href="./" data-i18n="home">Go to the home page</a>
+        </div>
+      </section>
+
+      <noscript>
+        <p>
+          This is a Wonty invitation. Open this link on your iPhone with Wonty installed, or get Wonty from the
+          App Store and open the link again.
+        </p>
+      </noscript>
+    </main>
+    <footer>
+      <a href="privacy/" data-i18n="privacy" data-localized>Privacy</a>
+      <a href="support/" data-i18n="support" data-localized>Support</a>
+    </footer>
+    <script src="assets/i18n.js"></script>
+    <script src="assets/site.js"></script>
+  </body>
+</html>

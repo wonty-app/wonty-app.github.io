@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Wonty — wishlists and gifts with friends</title>
+    <meta
+      name="description"
+      content="Save your wishes, share lists with friends and plan gifts together: birthdays, Secret Santa and more." />
+    <meta name="theme-color" content="#5B3FD9" />
+    <!-- Open Graph / Twitter: static hosting cannot personalise them, so they are generic everywhere.
+         Absolute URLs (crawlers do not resolve relative ones): update them with the domain. -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Wonty" />
+    <meta property="og:title" content="Wonty — wishlists and gifts with friends" />
+    <meta
+      property="og:description"
+      content="Save your wishes, share lists with friends and plan gifts together: birthdays, Secret Santa and more." />
+    <meta property="og:url" content="https://wonty-app.github.io/" />
+    <meta property="og:image" content="https://wonty-app.github.io/assets/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Wonty — wishlists and gifts with friends" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Wonty — wishlists and gifts with friends" />
+    <meta
+      name="twitter:description"
+      content="Save your wishes, share lists with friends and plan gifts together." />
+    <meta name="twitter:image" content="https://wonty-app.github.io/assets/og.png" />
+    <link rel="icon" type="image/png" href="assets/icon.png" />
+    <link rel="apple-touch-icon" href="assets/icon.png" />
+    <link rel="stylesheet" href="assets/site.css" />
+    <script src="assets/config.js"></script>
+    <script>
+      // Smart App Banner, only once the app is on the App Store (assets/config.js).
+      (function () {
+        var id = String((window.WONTY_CONFIG || {}).APP_STORE_ID || '');
+        if (/^\d+$/.test(id)) document.write('<meta name="apple-itunes-app" content="app-id=' + id + '">');
+      })();
+    </script>
+  </head>
+  <body data-page="home">
+    <main class="page">
+      <section class="card">
+        <img class="app-icon" src="assets/icon.png" alt="" width="88" height="88" />
+        <h1>Wonty</h1>
+        <p class="tagline" data-i18n="tagline">Save your wishes. Share your joy.</p>
+        <p class="lead" data-i18n="intro">
+          Keep every wish in one place, share lists with friends and plan gifts together: birthdays, Secret
+          Santa and more.
+        </p>
+        <ul class="features">
+          <li><span aria-hidden="true">🎁</span><span data-i18n="featureLists">Wishlists for every occasion</span></li>
+          <li>
+            <span aria-hidden="true">🤫</span
+            ><span data-i18n="featureReserve">Friends reserve gifts, so nobody buys the same thing twice</span>
+          </li>
+          <li>
+            <span aria-hidden="true">🎅</span
+            ><span data-i18n="featureEvents">Birthdays and Secret Santa with a secret draw</span>
+          </li>
+        </ul>
+        <div class="actions">
+          <a id="get-app" class="button primary" href="#" data-i18n="getApp">Get Wonty</a>
+        </div>
+        <p id="store-hint" class="hint" data-i18n="comingSoon" hidden>Wonty is coming to the App Store soon.</p>
+        <p id="platform-hint" class="hint" hidden></p>
+      </section>
+    </main>
+    <footer>
+      <a href="privacy/" data-i18n="privacy" data-localized>Privacy</a>
+      <a href="support/" data-i18n="support" data-localized>Support</a>
+    </footer>
+    <script src="assets/i18n.js"></script>
+    <script src="assets/site.js"></script>
+  </body>
+</html>
